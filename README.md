@@ -1,6 +1,6 @@
 # CLIP-SAM-ONNX
 
-一个同时使用 CLIP 与 Segment-Anything Model (SAM) 的 onnxruntime 推理项目。相比原始 SAM-ONNX，本仓库新增了 语言提示词分割（CLIPSeg）功能。
+一个同时使用 CLIP 与 Segment-Anything Model (SAM) 的 onnxruntime 推理项目。相比原始 SAM-ONNX (https://github.com/Dominic23331/sam_onnx)，本仓库新增了 语言提示词分割（CLIPSeg）功能。
 
 SAM 目前支持三种提示类型：Mask / Point / Box。本项目通过 CLIPSeg 先粗分割，再把 Box+Foreground Point 传给 SAM，获得高质量掩码。
 
