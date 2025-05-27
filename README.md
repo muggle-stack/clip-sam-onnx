@@ -86,17 +86,18 @@ python inference.py \
 
 ## 参数说明
 
---img	                 必填 str	                   输入图片路径  
---vit-model	             必填 str	                   SAM ViT 编码器 ONNX  
---decoder-model	         必填 str	                   SAM prompt + decoder ONNX  
---device	             cpu/cuda (default=cpu)	      推理设备  
---warmup	             int N	                      热身迭代次数  
---clipseg-model          str “”	                      CLIPSeg ONNX 路径  
---text	                 str “”	                      文本提示词  
---thr	                 float 0.28	                  CLIPSeg 概率阈值  
---kernel	             int 15	                      膨胀核大小  
---output	             str “”	                      结果保存路径（若空→仅显示）  
-
+| 参数            | 必填 / 默认                     | 说明                                             |
+|-----------------|---------------------------------|--------------------------------------------------|
+| `--img`         | **必填** · `str`               | 输入图片路径                                     |
+| `--vit-model`   | **必填** · `str`               | SAM ViT 编码器 ONNX 文件路径                     |
+| `--decoder-model`| **必填** · `str`              | SAM prompt + decoder ONNX 文件路径               |
+| `--device`      | `cpu` / `cuda` · 默认 `cpu`    | 推理设备                                         |
+| `--warmup`      | `int` · 默认 `0`               | 热身迭代次数（可减少首帧延迟）                    |
+| `--clipseg-model`| `str` · 默认 `""`             | CLIPSeg ONNX 路径；填写后启用文本提示分割         |
+| `--text`        | `str` · 默认 `""`              | 文本提示词                                       |
+| `--thr`         | `float` · 默认 `0.28`          | CLIPSeg 概率阈值（越高越严格）                   |
+| `--kernel`      | `int` · 默认 `15`              | 膨胀核大小（掩码后处理，1 表示不膨胀）           |
+| `--output`      | `str` · 默认 `""`              | 结果保存路径；若为空仅显示不保存                 |
 
 
 
